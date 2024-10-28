@@ -1,0 +1,203 @@
+.reg-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+.para1-reg{
+    font-family: Open Sans;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #343434;
+}
+.name-div-reg{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 3vw;
+}
+.name-img-reg{
+    z-index: 1000;
+    position: relative;
+    left: 3vw;
+}
+.name-input-reg{
+    height: 100%;
+    width: 65%;
+    border-radius: 11px;
+    border: 1.38px solid #D0D0D0;
+    padding-left: 4vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #828282;
+}
+.name-err-reg{
+    width: 10vw;
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: absolute;
+    left: 6.5vw;
+    z-index: 1000;
+}
+.email-div-reg{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 3vw;
+}
+.email-img-reg{
+    z-index: 1000;
+    position: relative;
+    left: 3vw;
+}
+.email-input-reg{
+    height: 100%;
+    width: 65%;
+    border-radius: 11px;
+    border: 1.38px solid #D0D0D0;
+    padding-left: 4vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #828282;
+}
+.email-err-reg{
+    width: 10vw;
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: absolute;
+    left: 6.5vw;
+    z-index: 1000;
+}
+.confpass-div-reg{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 3vw;
+}
+.confpass-img-reg{
+    z-index: 1000;
+    position: relative;
+    left: 3vw;
+}
+.confpass-input-reg{
+    height: 100%;
+    width: 65%;
+    border-radius: 11px;
+    border: 1.38px solid #D0D0D0;
+    padding-left: 4vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #828282;
+}
+.view1-img-reg{
+    z-index: 1000;
+    position: relative;
+    right: 3vw;
+    cursor: pointer;
+}
+.confpass-err-reg{
+    width: 10vw;
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: absolute;
+    left: 6.5vw;
+    z-index: 1000;
+}
+.pass-div-reg{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    left: 3vw;
+}
+.pass-img-reg{
+    z-index: 1000;
+    position: relative;
+    left: 3vw;
+}
+.pass-input-reg{
+    height: 100%;
+    width: 65%;
+    border-radius: 11px;
+    border: 1.38px solid #D0D0D0;
+    padding-left: 4vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #828282;
+}
+.view2-img-reg{
+    z-index: 1000;
+    position: relative;
+    right: 3vw;
+    cursor: pointer;
+}
+.pass-err-reg{
+    z-index: 1000;
+    width: 10vw;
+    font-family: Open Sans;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: absolute;
+    left: 6.5vw;
+}
+.signup-btn-reg{
+    height: 5vh;
+    width: 80%;
+    background-color: #17A2B8;
+    border: none; 
+    border-radius: 55px;  
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.signup-btn-reg:hover{
+    opacity: 0.5;
+}
+.para2-reg{
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #828282;
+    position: relative;
+    bottom: 2vh;
+}
+.log-btn-reg{
+    height: 5vh;
+    width: 80%;
+    background-color: #FFFFFF;
+    border: 1.38px solid #17A2B8; 
+    border-radius: 55px;  
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #17A2B8;
+    cursor: pointer;
+    position: relative;
+    bottom: 5vh;
+}
+.log-btn-reg:hover{
+    opacity: 0.5;
+}

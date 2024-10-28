@@ -1,0 +1,33 @@
+.land-container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+.div1-land{
+    grid-column: 1/2;
+    background-color: #17A2B8;
+    backdrop-filter: blur(33.07671356201172px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.para1-land{
+    color: #FFFFFF;
+    font-family: Open Sans;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2rem;
+}
+.para2-land{
+    color: #FFFFFF;
+    font-family: Open Sans;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1rem;
+}
+.div2-land{
+    grid-column: 2/3;
+    background-color: #FFFFFF;
+}

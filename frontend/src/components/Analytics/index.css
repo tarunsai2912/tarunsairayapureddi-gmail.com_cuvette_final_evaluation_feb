@@ -1,0 +1,205 @@
+.analy-container{
+    width: 75%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 3vw;
+}
+.analy-head{
+    font-family: Open Sans;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
+}
+.analy-div-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+}
+.div1-analy{
+    grid-column: 1/2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9FCFF;
+}
+.backlog-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.backlog-para-analy{
+    font-family: Open Sans;
+    width: 15vw;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.img-analy{
+    position: relative;
+    right: 1vw;
+}
+.backlog-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.todo-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.todo-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.todo-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.prog-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.prog-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.prog-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.done-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.done-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.done-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.div2-analy{
+    grid-column: 2/3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9FCFF;
+}
+.low-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.low-para-analy{
+    font-family: Open Sans;
+    width: 15vw;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.low-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.mid-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.mid-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.mid-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.high-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.high-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.high-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
+.due-div-analy{
+    display: flex;
+    flex-direction: row;
+}
+.due-para-analy{
+    width: 15vw;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    position: relative;
+    left: 5vw;
+}
+.due-no-analy{
+    font-family: Open Sans;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+    left: 12vw;
+}
