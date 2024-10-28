@@ -18,6 +18,8 @@ function Settings() {
 
     const token = sessionStorage.getItem('authToken')
     const userId = sessionStorage.getItem('userId')
+    const [userName, setUserName] = useState(sessionStorage.getItem('name'))
+    const [userEmail, setUserEmail] = useState(sessionStorage.getItem('email'))
     const [showPassword1, setShowPassword1] = useState(false)
     const [showPassword2, setShowPassword2] = useState(false)
 
@@ -72,11 +74,11 @@ function Settings() {
       {!loading && <div className='set-inp-container'>
         <div className='name-div-set'>
           <img className='name-img-set' src={name} alt='name_img'></img>
-          <input type='text' name='name' placeholder='Name' className='name-input-set' value={formData.name} onChange={handleChange}></input>
+          <input type='text' name='name' placeholder='Name' className='name-input-set' onClick={() => setUserName('')} value={formData.name ? formData.name : userName} onChange={handleChange}></input>
         </div>
         <div className='email-div-set'>
           <img className='email-img-set' src={email} alt='email_img'></img>
-          <input type='email' name='email' placeholder='Update Email' className='email-input-set' value={formData.email} onChange={handleChange}></input>
+          <input type='email' name='email' placeholder='Update Email' className='email-input-set' onClick={() => setUserEmail('')} value={formData.email ? formData.email : userEmail} onChange={handleChange}></input>
         </div>
         <div className='oldpass-div-set'>
           <img className='oldpass-img-set' src={password} alt='oldpass_img'></img>

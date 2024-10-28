@@ -185,7 +185,7 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
           <h3 className='head2-board'>Board</h3>
           <h3 className='para1-board' onClick={() => setIsAdd(true)}><img src={people} alt='people_img'></img>&nbsp; Add People</h3>
           <div className='board-d1-board'>
-            {boardEmails.length > 0 && boardEmails.map((each,index) => {
+            {boardEmails.length > 0 && boardEmails.map((each, index) => {
               return(
               <div className='each-bdiv-board' key={index}>
                 <p className='board-para-board'>{each[0].toUpperCase() + each[1].toUpperCase()}</p>
@@ -217,20 +217,20 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
           <button className='logout-cncl-board' onClick={() => setIsLogout(false)}>Cancel</button>
         </div>
       </div>}
-      {(!loading && isAdd) && <div className='add-div-board'>
-        {!isContinue ? <><h3 className='add-para-board'>Add people to the board</h3>
+      {(!loading && isAdd) && <div className='add-board'>
+        {!isContinue ? <div className='add-div-board'><h3 className='add-para-board'>Add people to the board</h3>
         <input className='add-inp-board' value={assignee} onChange={(e) => setAssignee(e.target.value)} placeholder='Enter the email'></input>
         {isError1 && <h3 className='add-err-board'>Add App Registered Email only</h3>}
         {isError2 && <h3 className='add-err-board'>Email already added to the Board</h3>}
         <div className='add-grid-board'>
           <button className='add-cncl-board' onClick={handleCancel}>Cancel</button>
           <button className='add-btn-board' onClick={handleEmail}>Add Email</button>
-        </div></> : <div className='ok-div-board'>
+        </div></div> : <div className='ok-div-board'>
           <h3 className='ok-para-board'>{assignee} added to board</h3>
           <button className='ok-btn-board' onClick={handleContinue}>Okay, got it!</button>
         </div>}
       </div>}
-      {loading && <div className='add-div-board'><ClipLoader color="#000" /></div>}
+      {loading && <div className='add-board'><ClipLoader color="#000" /></div>}
       {isDate && <div className='date-div-board'>
         <h3 className='date-para-board' onClick={() => handleDate('')}>All</h3>
         <h3 className='date-para-board' onClick={() => handleDate('Today')}>Today</h3>

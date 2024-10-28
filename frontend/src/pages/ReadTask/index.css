@@ -23,7 +23,7 @@
 .head-para-read{
     font-family: Poppins;
     color: #000000;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 700;
 }
 .body-div-read{
@@ -42,7 +42,7 @@
 .pri-para-read{
     width: 95%;
     font-family: Poppins;
-    font-size: 0.6rem;
+    font-size: 0.6vw;
     font-weight: 500;
     text-align: left;
     color: #707070;
@@ -50,7 +50,7 @@
 .body-head-read{
     width: 95%;
     font-family: Poppins;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -63,7 +63,7 @@
 }
 .check-para1-read{
     font-family: Inter;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -87,7 +87,7 @@
 }
 .check-para2-read{
     font-family: Inter;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 400;
     text-align: left;
     color: #000000;
@@ -101,7 +101,7 @@
 }
 .date-para-read{
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -113,7 +113,7 @@
     border: none;
     border-radius: 8px;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     display: flex;
     justify-content: center;
@@ -156,7 +156,7 @@
     .head-para-read{
         font-family: Poppins;
         color: #000000;
-        font-size: 1rem;
+        font-size: 1vw;
         font-weight: 700;
     }
     .body-div-read{
@@ -175,7 +175,7 @@
     .pri-para-read{
         width: 90%;
         font-family: Poppins;
-        font-size: 0.6rem;
+        font-size: 0.6vw;
         font-weight: 500;
         text-align: left;
         color: #707070;
@@ -183,7 +183,7 @@
     .body-head-read{
         width: 90%;
         font-family: Poppins;
-        font-size: 1.5rem;
+        font-size: 1.5vw;
         font-weight: 500;
         text-align: left;
         color: #000000;
@@ -196,7 +196,7 @@
     }
     .check-para1-read{
         font-family: Inter;
-        font-size: 0.8rem;
+        font-size: 0.8vw;
         font-weight: 500;
         text-align: left;
         color: #000000;
@@ -220,7 +220,7 @@
     }
     .check-para2-read{
         font-family: Inter;
-        font-size: 0.8rem;
+        font-size: 0.8vw;
         font-weight: 400;
         text-align: left;
         color: #000000;
@@ -236,7 +236,7 @@
     }
     .date-para-read{
         font-family: Poppins;
-        font-size: 0.8rem;
+        font-size: 0.8vw;
         font-weight: 500;
         text-align: left;
         color: #000000;
@@ -248,7 +248,7 @@
         border: none;
         border-radius: 8px;
         font-family: Poppins;
-        font-size: 0.8rem;
+        font-size: 0.8vw;
         font-weight: 500;
         text-align: center;
         color: #FFFFFF;

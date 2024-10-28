@@ -25,7 +25,7 @@ const DatePickerWrapper = styled.div`
     width: 10vw;
     height: 5vh;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1vw;
     border-radius: 12px;
     border: 1px solid #E2E2E2;
     outline: none;
@@ -37,7 +37,7 @@ const DatePickerWrapper = styled.div`
     color: #707070;
     font-family: Poppins;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1vw;
     text-align: center;
   }`
 
@@ -160,7 +160,7 @@ function CreateTask({setIsCreate}) {
       </div>
       <div className='assign-div-create'>
         <h3 className='assign-para-create'>Assign to</h3>
-        <button className='assign-sel-create' onClick={() => setExpand(!expand)}>{assignedToEmail ? assignedToEmail : 'Add a assignee'}<img className='down-img-create' src={downArr1} alt='down_img'></img></button>
+        <button className='assign-sel-create' onClick={() => setExpand(!expand)}>{assignedToEmail ? assignedToEmail : 'Add a assignee'}<img className='down-img-create' src={downArr1} alt='down_img'></img>
         <div className='opt-div-create'>
           {expand && userEmails.map((user, userIndex) => {
             return (
@@ -174,6 +174,7 @@ function CreateTask({setIsCreate}) {
             )
           })}
         </div>
+        </button>
       </div>
       <h3 className='check-para-create'>Checklist ({completedCheckCount}/{checklist.length}) <span className='star-create'>*</span></h3>
       <div className='check-div-create'>

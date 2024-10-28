@@ -9,7 +9,7 @@
 }
 .para1-log{
     font-family: Open Sans;
-    font-size: 2rem;
+    font-size: 2vw;
     font-weight: 600;
     color: #343434;
 }
@@ -34,14 +34,14 @@
     border: 1.38px solid #D0D0D0;
     padding-left: 4vw;
     font-family: Open Sans;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 400;
     color: #828282;
 }
 .email-err-log{
     width: 10vw;
     font-family: Open Sans;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 400;
     position: absolute;
     left: 6.5vw;
@@ -68,7 +68,7 @@
     border: 1.38px solid #D0D0D0;
     padding-left: 4vw;
     font-family: Open Sans;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 400;
     color: #828282;
 }
@@ -82,7 +82,7 @@
     z-index: 1000;
     width: 10vw;
     font-family: Open Sans;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 400;
     position: absolute;
     left: 6.5vw;
@@ -92,9 +92,9 @@
     width: 80%;
     background-color: #17A2B8;
     border: none; 
-    border-radius: 55px;  
+    border-radius: 55vw;  
     font-family: Open Sans;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 400;
     color: #FFFFFF;
     cursor: pointer;
@@ -104,7 +104,7 @@
 }
 .para2-log{
     font-family: Open Sans;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 400;
     color: #828282;
     position: relative;
@@ -117,7 +117,7 @@
     border: 1.38px solid #17A2B8; 
     border-radius: 55px;  
     font-family: Open Sans;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 400;
     color: #17A2B8;
     cursor: pointer;

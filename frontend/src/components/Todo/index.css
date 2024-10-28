@@ -2,6 +2,7 @@
     background-color: #EEF2F5;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@
 }
 .head1-todo{
     font-family: Poppins;
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -61,7 +62,7 @@
 }
 .pri-div-todo{
     font-family: Poppins;
-    font-size: 0.5rem;
+    font-size: 0.5vw;
     font-weight: 500;
     text-align: center;
     color: #707070;
@@ -72,8 +73,8 @@
     gap: 0.5vw;
 }
 .email-div-todo{
-    width: 1vw;
-    height: 2vh;
+    width: 17px;
+    height: 17px;
     background-color: #FFEBEB;
     border-radius: 100%;
     display: flex;
@@ -82,7 +83,7 @@
 }
 .email-para-todo{
     font-family: DM Sans;
-    font-size: 0.5rem;
+    font-size: 0.5vw;
     font-weight: 400;
     text-align: center;
     color: #000000;
@@ -104,7 +105,7 @@
 }
 .edit-btn-todo{
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -112,7 +113,7 @@
 }
 .share-btn-todo{
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -120,7 +121,7 @@
 }
 .del-btn-todo{
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: left;
     color: #CF3636;
@@ -129,10 +130,11 @@
 .head2-todo{
     width: 90%;
     font-family: Poppins;
-    font-size: 1.1rem;
+    font-size: 1.1vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
+    word-break: break-all;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -148,9 +150,9 @@
     background-color: #555;
     color: #FFFFFF;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
     border-radius: 6px;
     transition: opacity 0.3s;
     opacity: 0;
@@ -168,7 +170,7 @@
 }
 .check-para1-todo{
     font-family: Inter;
-    font-size: 0.9rem;
+    font-size: 0.9vw;
     font-weight: 500;
     text-align: left;
     color: #000000;
@@ -199,7 +201,7 @@
 }
 .check-para2-todo{
     font-family: Inter;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 400;
     text-align: left;
     color: #000000;
@@ -217,7 +219,7 @@
     border-radius: 8px;
     border: none;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: center;
 }
@@ -232,7 +234,7 @@
     border-radius: 8px;
     border: none;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: center;
     background-color: #EEECEC;
@@ -245,7 +247,7 @@
     border-radius: 8px;
     border: none;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: center;
     background-color: #EEECEC;
@@ -258,7 +260,7 @@
     border-radius: 8px;
     border: none;
     font-family: Poppins;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
     font-weight: 500;
     text-align: center;
     background-color: #EEECEC;

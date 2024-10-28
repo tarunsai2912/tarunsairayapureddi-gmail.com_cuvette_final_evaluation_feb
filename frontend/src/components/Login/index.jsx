@@ -77,12 +77,13 @@ function Login({handleRegister}) {
         sessionStorage.setItem('authToken', response.data.token)
         sessionStorage.setItem('userId', response.data.user_Id)
         sessionStorage.setItem('name', response.data.name)
+        sessionStorage.setItem('email', response.data.email)
         sessionStorage.setItem('selectedDate', 'This Week')
         navigate('/home')
       }
     }
     catch (error){
-      toast.error("Password/Email is Incorrect")
+      toast.error(error.response.data.msg)
       setLoading(false)
     }
   }

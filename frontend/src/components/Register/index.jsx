@@ -103,7 +103,7 @@ function Register({handleLogin}) {
             }
         }
         catch (error){
-            toast.error("User Already Exists")
+            toast.error(error.response.data.msg)
             setLoading(false)
         }
     }

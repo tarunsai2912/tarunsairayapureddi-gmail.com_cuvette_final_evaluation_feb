@@ -25,7 +25,7 @@ const DatePickerWrapper = styled.div`
     width: 10vw;
     height: 5vh;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1vw;
     border-radius: 12px;
     border: 1px solid #E2E2E2;
     outline: none;
@@ -37,7 +37,7 @@ const DatePickerWrapper = styled.div`
     color: #707070;
     font-family: Poppins;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1vw;
     text-align: center;
   }`
 
@@ -182,7 +182,7 @@ function EditTask({setIsEdit}) {
       </div>
       <div className='assign-div-edit'>
         <h3 className='assign-para-edit'>Assign to</h3>
-        <button className='assign-sel-edit' onClick={() => setExpand(!expand)} disabled={task.createdBy !== userId} style={{cursor: task.createdBy !== userId ? 'not-allowed' : 'pointer'}}>{task.assignedToEmail ? task.assignedToEmail : 'Add a assignee'}<img className='down-img-create' style={{visibility: task.createdBy !== userId ? 'hidden' : 'visible'}} src={downArr1} alt='down_img'></img></button>
+        <button className='assign-sel-edit' onClick={() => setExpand(!expand)} disabled={task.createdBy !== userId} style={{cursor: task.createdBy !== userId ? 'not-allowed' : 'pointer'}}>{task.assignedToEmail ? task.assignedToEmail : 'Add a assignee'}<img className='down-img-create' style={{visibility: task.createdBy !== userId ? 'hidden' : 'visible'}} src={downArr1} alt='down_img'></img>
         <div className='opt-div-edit'>
           {expand && userEmails.map((user, userIndex) => {
             return (
@@ -196,6 +196,7 @@ function EditTask({setIsEdit}) {
             )
           })}
         </div>
+        </button>
       </div>
       <h3 className='check-para-edit'>Checklist ({task.completedCheckCount}/{task.checklist.length}) <span className='star-edit'>*</span></h3>
       <div className='check-div-edit'>

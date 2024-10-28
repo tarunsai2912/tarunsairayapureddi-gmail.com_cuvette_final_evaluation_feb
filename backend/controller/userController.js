@@ -29,16 +29,25 @@ const userRegister = async (req, res, next) => {
 }
 
 const userLogin = async (req, res, next) => {
-    const {email, password} = req.body
     try{
+        const {email, password} = req.body
+        
         const user = await User.findOne({email})
-        if(!user || !(await bcrypt.compare(password, user.password))){
+        
+        if(!user){
+            return res.status(400).json({msg: 'User is not registered'})
+        }
+        
+        const passMatch = await bcrypt.compare(password, user.password)
+        if(!passMatch){
             return res.status(400).json({msg: 'Email/Password is Incorrect'})
         }
+
         const user_Id = user._id
         const name = user.name
         const token = jwt.sign({user_Id: user._id}, process.env.JWT_SECRET)
-        return res.status(200).json({msg: 'User got LoggedIn', token, user_Id, name})
+        
+        return res.status(200).json({msg: 'User got LoggedIn', token, user_Id, name, email})
     }
     catch(err){
         return next(err)
@@ -98,6 +107,10 @@ const updateUser = async (req, res, next) => {
             user.name = name
         }
         else if(email && !name && !oldPassword && !newPassword){
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            if (!emailRegex.test(email)) {
+                return res.status(400).json({msg: 'Invalid Email format!'})
+            }
             const existUser = await User.findOne({email})
             if(existUser){
                 return res.status(400).json({msg: 'Email already taken!'})
@@ -133,6 +146,9 @@ const updateUser = async (req, res, next) => {
         else if(oldPassword && newPassword && !email && !name){
             if(oldPassword === newPassword){
                 return res.status(400).json({msg: 'New Password should be different!'})
+            }
+            if (newPassword.length < 6) {
+                return res.status(400).json({msg: 'New Password should be at least 7 characters long!'})
             }
             if(!(await bcrypt.compare(oldPassword, user.password))){
                 return res.status(400).json({msg: 'Old password is incorrect!'})
