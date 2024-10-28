@@ -44,7 +44,7 @@ function ReadTask() {
         <img className='head-img-read' src={appLogo} alt='app_img'></img>
         <h3 className='head-para-read'>Pro Manage</h3>
       </div>
-      {loading && <div style={{position: 'relative', left:'40vw'}}><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
+      {loading && <div><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
       {!loading && <div className='body-div-read'>
         {task.priority === 'low' && <span className='pri-para-read'><img src={green} alt='green_img'></img>&nbsp; LOW PRIORITY</span>}
         {task.priority === 'mid' && <span className='pri-para-read'><img src={blue} alt='blue_img'></img>&nbsp; MODERATE PRIORITY</span>}
