@@ -46,6 +46,7 @@ function EditTask({setIsEdit}) {
   const [task, setTask] = useState({})
   const [loading, setLoading] = useState(true)
   const token = sessionStorage.getItem('authToken')
+  const userId = sessionStorage.getItem('userId')
   const taskId = sessionStorage.getItem('taskId')
   const [userEmails, setUserEmails] = useState([])
   const [expand, setExpand] = useState(false)
@@ -181,7 +182,7 @@ function EditTask({setIsEdit}) {
       </div>
       <div className='assign-div-edit'>
         <h3 className='assign-para-edit'>Assign to</h3>
-        <button className='assign-sel-edit' onClick={() => setExpand(!expand)}>{task.assignedToEmail ? task.assignedToEmail : 'Add a assignee'}<img className='down-img-create' src={downArr1} alt='down_img'></img></button>
+        <button className='assign-sel-edit' onClick={() => setExpand(!expand)} disabled={task.createdBy !== userId}>{task.assignedToEmail ? task.assignedToEmail : 'Add a assignee'}<img className='down-img-create' style={{visibility: task.createdBy !== userId ? 'hidden' : 'visible'}} src={downArr1} alt='down_img'></img></button>
         <div className='opt-div-edit'>
           {expand && userEmails.map((user, userIndex) => {
             return (
