@@ -160,6 +160,9 @@ const updateUser = async (req, res, next) => {
         else if((oldPassword && !newPassword && !email && !name) || (!oldPassword && newPassword && !email && !name)){
             return res.status(400).json({msg: 'Give both old and new passwords!'})
         }
+        else if(!name && !email && !oldPassword && !newPassword){
+            return res.status(400).json({msg: 'Please specify any field!'})
+        }
         else{
             return res.status(400).json({msg: 'Only one field can be updated at a time!'})
         } 
