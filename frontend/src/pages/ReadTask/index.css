@@ -80,7 +80,7 @@
     z-index: 1000;
     position: absolute;
     top: 2vh;
-    left: 1vw;
+    left: 0;
 }
 .check-div-read{
     width: 95%;
@@ -214,6 +214,32 @@
         font-weight: 500;
         text-align: left;
         color: #000000;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .body-head-read:hover .body-head-para-read{
+        visibility: visible;
+        opacity: 1;
+    }
+    .body-head-para-read{
+        visibility: hidden;
+        width: 100%;
+        background-color: #555;
+        color: #FFFFFF;
+        font-family: Poppins;
+        font-size: 0.8vw;
+        font-weight: 500;
+        text-align: left;
+        border-radius: 6px;
+        transition: opacity 0.3s;
+        opacity: 0;
+        z-index: 1000;
+        position: absolute;
+        top: 2vh;
+        left: 0;
     }
     .check-div-read{
         width: 90%;
