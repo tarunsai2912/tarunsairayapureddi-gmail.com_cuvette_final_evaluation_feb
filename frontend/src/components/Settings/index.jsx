@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import view from '../../assets/view.png'
 import hide from '../../assets/hide.png'
 import axios from 'axios'
-const url = 'https://pro-manage-mern-backend.vercel.app/api'
+const url = 'https://pro-manage-webapp-backend.vercel.app/api'
 
 function Settings() {
 

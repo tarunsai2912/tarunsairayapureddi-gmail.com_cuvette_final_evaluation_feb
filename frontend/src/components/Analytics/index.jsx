@@ -5,7 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
-const url = 'https://pro-manage-mern-backend.vercel.app/api'
+const url = 'https://pro-manage-webapp-backend.vercel.app/api'
 
 function Analytics() {
 

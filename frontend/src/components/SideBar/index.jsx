@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import appLogo from '../../assets/appLogo.png'
-import { useNavigate } from 'react-router-dom'
 import analytics from '../../assets/anly.png'
 import board from '../../assets/board.png'
 import settings from '../../assets/settings.png'
@@ -15,8 +14,6 @@ function SideBar({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdi
   const [isClickedDash, setIsClickedDash] = useState(true)
   const [isClickedAnaly, setIsClickedAnaly] = useState(false)
   const [isClickedSet, setIsClickedSet] = useState(false)
-
-  const navigate = useNavigate()
 
   const handleDash = () => {
     setIsClickedDash(true)

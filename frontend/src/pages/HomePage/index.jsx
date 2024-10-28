@@ -20,7 +20,6 @@ function HomePage() {
 
   const navigate = useNavigate()
   const token = sessionStorage.getItem('authToken')
-  const userId = sessionStorage.getItem('userId')
 
   const handleDashboard = () => {
     setShowBoard(true)

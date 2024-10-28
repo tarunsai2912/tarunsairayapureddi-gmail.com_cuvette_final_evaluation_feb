@@ -14,7 +14,7 @@ import blue from '../../assets/blue.png'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
-const url = 'https://pro-manage-mern-backend.vercel.app/api'
+const url = 'https://pro-manage-webapp-backend.vercel.app/api'
 const clientUrl = 'https://pro-manage-mern-frontend.vercel.app'
 
 function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, ellipse, setEllipse, setIsEdit, isLogout, isAdd}) {

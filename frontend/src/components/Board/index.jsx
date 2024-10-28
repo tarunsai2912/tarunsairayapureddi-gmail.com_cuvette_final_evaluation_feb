@@ -13,7 +13,7 @@ import CreateTask from '../CreateTask'
 import EditTask from '../EditTask'
 import './index.css'
 import axios from 'axios'
-const url = 'https://pro-manage-mern-backend.vercel.app/api'
+const url = 'https://pro-manage-webapp-backend.vercel.app/api'
 
 function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit, isLogout, setIsLogout, isAdd, setIsAdd}) {
 
