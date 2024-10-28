@@ -49,7 +49,9 @@ function ReadTask() {
         {task.priority === 'low' && <span className='pri-para-read'><img src={green} alt='green_img'></img>&nbsp; LOW PRIORITY</span>}
         {task.priority === 'mid' && <span className='pri-para-read'><img src={blue} alt='blue_img'></img>&nbsp; MODERATE PRIORITY</span>}
         {task.priority === 'high' && <span className='pri-para-read'><img src={red} alt='red_img'></img>&nbsp; HIGH PRIORITY</span>}
-        <h3 className='body-head-read'>{task.title}</h3>
+        <h3 className='body-head-read'>{task.title}
+          <span className='body-head-para-read'>{task.title}</span>
+        </h3>
         <div className='check-div-read'>
           <h3 className='check-para1-read'>Checklist ({task.completedCheckCount}/{task.checklist.length})</h3>
           <div className='check-each-div-read'>
