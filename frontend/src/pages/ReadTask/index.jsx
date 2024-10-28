@@ -62,7 +62,7 @@ function ReadTask() {
         </div>
         {task.dueDate && <div className='date-div-read'>
           <h3 className='date-para-read'>Due Date</h3>
-          <button className='date-no-read'>{task.dueDate}</button>
+          <button className='date-no-read'>{months[new Date(task.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(task.dueDate).toLocaleDateString().split('/')[0]}th</button>
         </div>}
       </div>}
     </div>
