@@ -38,6 +38,7 @@
     justify-content: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
+    position: relative;
 }
 .pri-para-read{
     width: 95%;
@@ -59,7 +60,6 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    position: relative;
 }
 .body-head-read:hover .body-head-para-read{
     visibility: visible;
@@ -79,8 +79,8 @@
     opacity: 0;
     z-index: 1000;
     position: absolute;
-    bottom: 3vh;
-    left: 0;
+    top: 2vh;
+    left: 1vw;
 }
 .check-div-read{
     width: 95%;
