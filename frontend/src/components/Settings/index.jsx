@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './index.css'
+import { useNavigate } from 'react-router-dom'
 import name from '../../assets/name.png'
 import email from '../../assets/email.png'
 import password from '../../assets/password.png'
@@ -12,6 +13,8 @@ import axios from 'axios'
 const url = 'https://pro-manage-webapp-backend.vercel.app/api'
 
 function Settings() {
+
+    const navigate = useNavigate()
 
     const token = sessionStorage.getItem('authToken')
     const userId = sessionStorage.getItem('userId')
@@ -47,12 +50,11 @@ function Settings() {
           if (response) {
             toast.success("User Updated Successfully")
             sessionStorage.setItem('name', response.data.userName)
-            setFormData({
-              name: '',
-              email: '',
-              oldPassword: '', 
-              newPassword: ''
-            })
+            if(formData.email || (formData.newPassword && formData.oldPassword)){
+              sessionStorage.clear()
+              setLoading(false)
+              navigate('/')
+            }
             setLoading(false)
           }
         }

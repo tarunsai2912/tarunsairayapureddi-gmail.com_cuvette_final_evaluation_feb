@@ -1,4 +1,5 @@
 const User = require('../model/user')
+const Task = require('../model/task')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const mongoose = require('mongoose')
@@ -100,6 +101,32 @@ const updateUser = async (req, res, next) => {
             const existUser = await User.findOne({email})
             if(existUser){
                 return res.status(400).json({msg: 'Email already taken!'})
+            }
+            const assignTasks = await Task.find({assignedToEmail: user.email})
+            const boardTasks = await Task.find({boardToEmail: user.email})
+            const boardUsers = await User.find({boardToUser: user.email})
+
+            if(assignTasks){
+                await Promise.all(assignTasks.map(async (each) => {
+                    each.assignedToEmail = email
+                    await each.save()
+                }))
+            }
+
+            if(boardTasks){
+                await Promise.all(boardTasks.map(async (each) => {
+                    each.boardToEmail.pull(user.email)
+                    each.boardToEmail.push(email)
+                    await each.save()
+                }))
+            }
+
+            if(boardUsers){
+                await Promise.all(boardUsers.map(async (each) => {
+                    each.boardToUser.pull(user.email)
+                    each.boardToUser.push(email)
+                    await each.save()
+                }))
             }
             user.email = email
         }
