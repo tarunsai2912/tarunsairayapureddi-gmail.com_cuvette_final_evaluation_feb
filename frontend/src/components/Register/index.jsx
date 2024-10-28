@@ -111,7 +111,7 @@ function Register({handleLogin}) {
   return (
     <>
     <ToastContainer />
-    {loading && <div style={{position: 'relative', left:'40vw'}}><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
+    {loading && <div><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
     {!loading && <div className='reg-container'>
       <h3 className='para1-reg'>Register</h3>
       <div className='name-div-reg'>

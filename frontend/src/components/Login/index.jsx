@@ -73,12 +73,12 @@ function Login({handleRegister}) {
       const response = await axios.post(reqUrl, formData)
       if (response) {
         toast.success("User got LoggedIn Successfully")
-        setLoading(false)
         sessionStorage.setItem('authToken', response.data.token)
         sessionStorage.setItem('userId', response.data.user_Id)
         sessionStorage.setItem('name', response.data.name)
         sessionStorage.setItem('email', response.data.email)
         sessionStorage.setItem('selectedDate', 'This Week')
+        setLoading(false)
         navigate('/home')
       }
     }
@@ -91,7 +91,7 @@ function Login({handleRegister}) {
   return (
     <>
       <ToastContainer />
-      {loading && <div style={{position: 'relative', left:'40vw'}}><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
+      {loading && <div><ClipLoader color={"#36D7B7"} loading={loading} size={100} /></div>}
       {!loading && <div className='log-container'>
         <h3 className='para1-log'>Login</h3>
         <div className='email-div-log'>
