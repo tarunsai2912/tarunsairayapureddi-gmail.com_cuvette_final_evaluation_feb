@@ -14,7 +14,7 @@ import ellipseImg from '../../assets/3Ellipse.png'
 import blue from '../../assets/blue.png'
 import axios from 'axios'
 const url = 'https://pro-manage-webapp-backend.vercel.app/api'
-const clientUrl = 'https://pro-manage-mern-frontend.vercel.app'
+const clientUrl = 'https://pro-manage-cuvette-webapp.vercel.app'
 
 function Progress({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEllipse, setIsEdit, isLogout, isAdd}) {
 
