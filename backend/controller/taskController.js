@@ -269,7 +269,7 @@ const getBacklogTasks = async (req, res, next) => {
     try {
         const { filter } = req.query
 
-        const now = moment().startOf('day')
+        const now = moment().startOf('day') - 1
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -278,7 +278,7 @@ const getBacklogTasks = async (req, res, next) => {
         let dateFilter = {}
 
         if (filter === 'Today') {
-            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } }
+            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } } 
         } else if (filter === 'This Week') {
             dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfWeek.toDate() } }
         } else if (filter === 'This Month') {
@@ -323,7 +323,7 @@ const getToDoTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day')
+        const now = moment().startOf('day') - 1
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -378,7 +378,7 @@ const getProgressTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day')
+        const now = moment().startOf('day') - 1
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -432,7 +432,7 @@ const getDoneTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day')
+        const now = moment().startOf('day') - 1
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
