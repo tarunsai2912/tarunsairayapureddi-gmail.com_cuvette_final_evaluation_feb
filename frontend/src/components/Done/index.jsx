@@ -23,8 +23,7 @@ function Done({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEllip
     const [loading, setLoading] = useState(false)
     const [doneData, setDoneData] = useState([])
     const selectedDate = sessionStorage.getItem('selectedDate')
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-    sessionStorage.setItem('doneCount', doneData.length)
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     const handleDone = async () => {
         try{
@@ -36,7 +35,8 @@ function Done({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEllip
                 }
             })
             if(response){
-                setDoneData(response.data)
+                setDoneData(response.data.doneTasks)
+                sessionStorage.setItem('doneCount', response.data.totalDoneTasks)
                 setLoading(false)
             }
         }

@@ -186,7 +186,6 @@
     gap: 1vh;
 }
 .check-d2-todo{
-    height: 6vh;
     border: 1px solid #E2E2E2;
     border-radius: 12px;
     display: flex;
@@ -199,11 +198,16 @@
     cursor: pointer;
 }
 .check-para2-todo{
+    width: 85%;
     font-family: Inter;
     font-size: 0.8vw;
     font-weight: 400;
     text-align: left;
     color: #000000;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .body-d2-todo{
     width: 90%;

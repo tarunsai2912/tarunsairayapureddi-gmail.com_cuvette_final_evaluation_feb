@@ -16,7 +16,7 @@ function ReadTask() {
   const {id} = useParams()
   const [task, setTask] = useState({})
   const [loading, setLoading] = useState(true)
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const taskId = id
 
   const fetchTask = async () => {

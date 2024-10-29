@@ -24,8 +24,7 @@ function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, elli
     const [loading, setLoading] = useState(false)
     const selectedDate = sessionStorage.getItem('selectedDate')
     const [todoData, setTodoData] = useState([])
-    sessionStorage.setItem('todoCount', todoData.length)
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     const handleTodo = async () => {
         try{
@@ -37,7 +36,8 @@ function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, elli
                 }
             })
             if(response){
-                setTodoData(response.data)
+                setTodoData(response.data.todoTasks)
+                sessionStorage.setItem('todoCount', response.data.totalTodoTasks)
                 setLoading(false)
             }
         }

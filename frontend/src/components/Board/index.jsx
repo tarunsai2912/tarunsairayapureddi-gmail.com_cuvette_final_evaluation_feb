@@ -25,7 +25,7 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
   const [ellipse, setEllipse] = useState(null)
   const [isContinue, setIsContinue] = useState(false)
   const date = new Date()
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const [userEmails, setUserEmails] = useState([])
   const [boardEmails, setBoardEmails] = useState([])
   const [isError1, setIsError1] = useState(false)

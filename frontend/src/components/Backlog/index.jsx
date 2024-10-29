@@ -23,8 +23,7 @@ function Backlog({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEl
     const [expand, setExpand] = useState([])
     const [loading, setLoading] = useState(false)
     const [backlogData, setBacklogData] = useState([])
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-    sessionStorage.setItem('backlogCount', backlogData.length)
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     const handleBacklog = async () => {
         try{
@@ -36,7 +35,8 @@ function Backlog({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEl
                 }
             })
             if(response){
-                setBacklogData(response.data)
+                setBacklogData(response.data.backlogTasks)
+                sessionStorage.setItem('backlogCount', response.data.totalBacklogTasks)
                 setLoading(false)
             }
         }

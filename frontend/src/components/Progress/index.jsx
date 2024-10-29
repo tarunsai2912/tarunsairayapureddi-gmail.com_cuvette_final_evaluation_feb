@@ -23,8 +23,7 @@ function Progress({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setE
   const [loading, setLoading] = useState(false)
   const selectedDate = sessionStorage.getItem('selectedDate')
   const [progressData, setProgressData] = useState([])
-  sessionStorage.setItem('progressCount', progressData.length)
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
   const handleProgress = async () => {
     try{
@@ -36,7 +35,8 @@ function Progress({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setE
         }
       })
       if(response){
-        setProgressData(response.data)
+        setProgressData(response.data.progressTasks)
+        sessionStorage.setItem('progressCount', response.data.totalProgressTasks)
         setLoading(false)
       }
     }

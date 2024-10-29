@@ -113,11 +113,16 @@
     padding-left: 1vw;
 }
 .check-para2-read{
+    width: 85%;
     font-family: Inter;
     font-size: 0.8vw;
     font-weight: 400;
     text-align: left;
     color: #000000;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .date-div-read{
     width: 95%;

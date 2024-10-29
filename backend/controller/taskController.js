@@ -290,6 +290,17 @@ const getBacklogTasks = async (req, res, next) => {
             return res.status(400).json({ msg: 'User Not Found' })
         }
 
+        const totBacklogTasks = await Task.aggregate([
+            {
+                $match: { $or: [{ createdBy: req.user_Id }, { assignedToEmail: user.email }, { boardToEmail: user.email }] }
+            },
+            {
+                $match: { section: { $eq: 'backlog' } }
+            }
+        ])
+
+        const totalBacklogTasks = totBacklogTasks.length
+
         const backlogTasks = await Task.aggregate([
             {
                 $match: { $or: [{ createdBy: req.user_Id }, { assignedToEmail: user.email }, { boardToEmail: user.email }] }
@@ -302,7 +313,7 @@ const getBacklogTasks = async (req, res, next) => {
             }
         ])
 
-        return res.status(200).json(backlogTasks)
+        return res.status(200).json({backlogTasks, totalBacklogTasks}) 
     } catch (err) {
         return next(err)
     }
@@ -332,6 +343,18 @@ const getToDoTasks = async (req, res, next) => {
         if(!user){
             return res.status(400).json({msg: 'User Not Found'})
         }
+
+        const totTodoTasks = await Task.aggregate([
+            {
+                $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
+            },
+            {
+                $match: { section: { $eq: 'todo' } }
+            }
+        ])
+
+        const totalTodoTasks = totTodoTasks.length 
+
         const todoTasks = await Task.aggregate([
             {
                 $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
@@ -344,7 +367,7 @@ const getToDoTasks = async (req, res, next) => {
             }
         ])
         
-        return res.status(200).json(todoTasks)
+        return res.status(200).json({todoTasks, totalTodoTasks})
     }
     catch(err){
         return next(err)
@@ -375,6 +398,18 @@ const getProgressTasks = async (req, res, next) => {
         if(!user){
             return res.status(400).json({msg: 'User Not Found'})
         }
+
+        const totProgressTasks = await Task.aggregate([
+            {
+                $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
+            },
+            {
+                $match: { section: { $eq: 'inprogress' } }
+            }
+        ])
+
+        const totalProgressTasks = totProgressTasks.length
+
         const progressTasks = await Task.aggregate([
             {
                 $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
@@ -386,7 +421,7 @@ const getProgressTasks = async (req, res, next) => {
                 $match: {$or: [{ dueDate: { $eq: null } }, dateFilter]}
             }
         ])
-        return res.status(200).json(progressTasks)
+        return res.status(200).json({progressTasks, totalProgressTasks}) 
     }
     catch(err){
         return next(err)
@@ -418,6 +453,17 @@ const getDoneTasks = async (req, res, next) => {
             return res.status(400).json({msg: 'User Not Found'})
         }
 
+        const totDoneTasks = await Task.aggregate([
+            {
+                $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
+            },
+            {
+                $match: { section: { $eq: 'done' } }
+            }
+        ])
+
+        const totalDoneTasks = totDoneTasks.length 
+
         const doneTasks = await Task.aggregate([
             {
                 $match: { $or: [{createdBy: req.user_Id}, {assignedToEmail: user.email}, { boardToEmail: user.email }] }
@@ -429,7 +475,7 @@ const getDoneTasks = async (req, res, next) => {
                 $match: {$or: [{ dueDate: { $eq: null } }, dateFilter]}
             }
         ])
-        return res.status(200).json(doneTasks)
+        return res.status(200).json({doneTasks, totalDoneTasks})
     }
     catch(err){
         return next(err)
