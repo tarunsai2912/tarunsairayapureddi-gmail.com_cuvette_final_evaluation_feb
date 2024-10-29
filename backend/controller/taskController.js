@@ -269,7 +269,7 @@ const getBacklogTasks = async (req, res, next) => {
     try {
         const { filter } = req.query
 
-        const now = moment().startOf('day-1')
+        const now = moment().startOf('day')
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -309,7 +309,7 @@ const getBacklogTasks = async (req, res, next) => {
                 $match: { section: { $eq: 'backlog' } }
             },
             {
-                $match: { $or: [{ dueDate: { $eq: null } }, dateFilter] }
+                $match: { $or: [{dueDate: {$eq: null}}, {dueDate: {$gte: dateFilter.dueDate.$gte, $lte: dateFilter.dueDate.$lte}}]}
             }
         ])
 
@@ -323,7 +323,7 @@ const getToDoTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day-1')
+        const now = moment().startOf('day')
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -363,7 +363,7 @@ const getToDoTasks = async (req, res, next) => {
                 $match: { section: { $eq: 'todo' } }
             },
             {
-                $match: {$or: [{ dueDate: { $eq: null } }, dateFilter]}
+                $match: {$or: [{dueDate: {$eq: null}}, {dueDate: {$gte: dateFilter.dueDate.$gte, $lte: dateFilter.dueDate.$lte}}]}
             }
         ])
         
@@ -378,7 +378,7 @@ const getProgressTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day-1')
+        const now = moment().startOf('day')
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -418,7 +418,7 @@ const getProgressTasks = async (req, res, next) => {
                 $match: { section: { $eq: 'inprogress' } }
             },
             {
-                $match: {$or: [{ dueDate: { $eq: null } }, dateFilter]}
+                $match: {$or: [{dueDate: {$eq: null}}, {dueDate: {$gte: dateFilter.dueDate.$gte, $lte: dateFilter.dueDate.$lte}}]}
             }
         ])
         return res.status(200).json({progressTasks, totalProgressTasks}) 
@@ -432,7 +432,7 @@ const getDoneTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().startOf('day-1') 
+        const now = moment().startOf('day') 
         const endOfDay = moment(now).endOf('day')
         const endOfWeek = moment(now).endOf('week')
         const endOfMonth = moment(now).endOf('month')
@@ -472,7 +472,7 @@ const getDoneTasks = async (req, res, next) => {
                 $match: { section: { $eq: 'done' } }
             },
             {
-                $match: {$or: [{ dueDate: { $eq: null } }, dateFilter]}
+                $match: {$or: [{dueDate: {$eq: null}}, {dueDate: {$gte: dateFilter.dueDate.$gte, $lte: dateFilter.dueDate.$lte}}]}
             }
         ])
         return res.status(200).json({doneTasks, totalDoneTasks})
