@@ -1,6 +1,6 @@
 const Task = require('../model/task')
 const User = require('../model/user')
-const moment = require('moment')
+const moment = require('moment-timezone')
 
 const updateTaskCounts = async (userId) => {
     const user = await User.findById(userId).populate('taskId')
@@ -269,11 +269,11 @@ const getBacklogTasks = async (req, res, next) => {
     try {
         const { filter } = req.query
 
-        const now = moment().utc().startOf('day')
-        const endOfDay = moment(now).utc().endOf('day')
-        const endOfWeek = moment(now).utc().endOf('week')
-        const endOfMonth = moment(now).utc().endOf('month')
-        const startOfMonth = moment(now).utc().startOf('month')
+        const now = moment().tz("Asia/Kolkata").startOf('day')
+        const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
+        const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
         let dateFilter = {}
 
@@ -323,11 +323,11 @@ const getToDoTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().utc().startOf('day')
-        const endOfDay = moment(now).utc().endOf('day')
-        const endOfWeek = moment(now).utc().endOf('week')
-        const endOfMonth = moment(now).utc().endOf('month')
-        const startOfMonth = moment(now).utc().startOf('month')
+        const now = moment().tz("Asia/Kolkata").startOf('day')
+        const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
+        const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
         let dateFilter = {}
 
@@ -378,11 +378,11 @@ const getProgressTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().utc().startOf('day')
-        const endOfDay = moment(now).utc().endOf('day')
-        const endOfWeek = moment(now).utc().endOf('week')
-        const endOfMonth = moment(now).utc().endOf('month')
-        const startOfMonth = moment(now).utc().startOf('month')
+        const now = moment().tz("Asia/Kolkata").startOf('day')
+        const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
+        const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
         let dateFilter = {}
 
@@ -432,11 +432,11 @@ const getDoneTasks = async (req, res, next) => {
     try{
         const { filter } = req.query
 
-        const now = moment().utc().startOf('day') 
-        const endOfDay = moment(now).utc().endOf('day')
-        const endOfWeek = moment(now).utc().endOf('week')
-        const endOfMonth = moment(now).utc().endOf('month')
-        const startOfMonth = moment(now).utc().startOf('month')
+        const now = moment().tz("Asia/Kolkata").startOf('day')
+        const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
+        const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
         let dateFilter = {}
 
