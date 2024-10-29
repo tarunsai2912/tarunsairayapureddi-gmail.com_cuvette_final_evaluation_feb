@@ -11,13 +11,13 @@ dotenv.config()
 const app = express()
 const port = process.env.Port || 3003
 
-app.use(cors({origin: '*'}))
+app.use(cors())
 
 app.use((req, res, next) => {
     const log = `${req.method} - ${req.url} - ${req.ip} - ${new Date()}`
     fs.appendFile('log.txt', log, (err) => {
         if(err){
-            console.log(err);
+            console.log(err)
         }
     })
     next()
@@ -36,7 +36,7 @@ app.use((err, req, res, next) => {
     log += `/n${req.method} - ${req.url} - ${req.ip} - ${new Date()}`
     fs.appendFile('error.txt', log, (err) => {
         if(err){
-            console.log(err);
+            console.log(err)
         }
     })
     res.status(500).send("Something went wrong")
@@ -45,9 +45,9 @@ app.use((err, req, res, next) => {
 mongoose.connect(process.env.MONGO_URI)
 
 mongoose.connection.on('connected', () => {
-    console.log('MongoDb is connected...');
+    console.log('MongoDb is connected...')
 })
 
 app.listen(port, () => {
-    console.log(`Server is running on ${port} port number`);
+    console.log(`Server is running on ${port} port number`)
 })
