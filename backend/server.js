@@ -11,11 +11,7 @@ dotenv.config()
 const app = express()
 const port = process.env.Port || 3003
 
-app.use(cors({
-    origin: 'https://pro-manage-cuvette-webapp.vercel.app', 
-    methods: 'GET,POST,PUT,PATCH,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
-}))
+app.use(cors({origin: '*'}))
 
 app.use((req, res, next) => {
     const log = `${req.method} - ${req.url} - ${req.ip} - ${new Date()}`
