@@ -22,8 +22,9 @@ function LandingPage() {
   }
 
   return (
+    <>
+    <ToastContainer />
     <div className='land-container'>
-      <ToastContainer />
       <div className='div1-land'>
         <img className='img-land' src={signImg} alt='sign_img'></img>
         <h3 className='para1-land'>Welcome aboard my friend<br/><span className='para2-land'>just a couple of clicks and we start</span></h3>
@@ -33,6 +34,7 @@ function LandingPage() {
         {showLogin && <Login handleRegister={handleRegister} />}
       </div>
     </div>
+    </>
   )
 }
 
