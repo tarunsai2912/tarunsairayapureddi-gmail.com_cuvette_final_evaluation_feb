@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 const url = 'https://pro-manage-webapp-backend.vercel.app/api'
-const clientUrl = 'https://pro-manage-cuvette-webapp.vercel.app'
+const clientUrl = 'http://localhost:5173'
 
 function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, ellipse, setEllipse, setIsEdit, isLogout, isAdd}) {
 
