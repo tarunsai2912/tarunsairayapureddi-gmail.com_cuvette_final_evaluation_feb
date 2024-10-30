@@ -209,7 +209,7 @@ function Progress({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setE
                     })}
                     </div>
                     <div className='body-d2-prog'>
-                        {each.dueDate ? <button className='date-btn-prog' style={{backgroundColor: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}th</button> : <div className='date-btn-prog'></div>}
+                        {each.dueDate ? <button className='date-btn-prog' style={{backgroundColor: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}</button> : <div className='date-btn-prog'></div>}
                         <div className='sect-div-prog'>
                             <button className='back-btn-prog' onClick={() => handleSection(each._id, 'backlog')} disabled={isDelete  || isCreate || isLogout || isAdd || isEdit}>BACKLOG</button>
                             <button className='todo-btn-prog' onClick={() => handleSection(each._id, 'todo')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>TO-DO</button>

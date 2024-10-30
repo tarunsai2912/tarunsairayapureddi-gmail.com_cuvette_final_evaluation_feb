@@ -208,7 +208,7 @@ function Done({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEllip
                     })}
                     </div>
                     <div className='body-d2-done'>
-                        {each.dueDate ? <button className='date-btn-done' style={{backgroundColor: '#63C05B', color: '#FFFFFF'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}th</button> : <div className='date-btn-done'></div>}
+                        {each.dueDate ? <button className='date-btn-done' style={{backgroundColor: '#63C05B', color: '#FFFFFF'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}</button> : <div className='date-btn-done'></div>}
                         <div className='sect-div-done'>
                             <button className='back-btn-done' onClick={() => handleSection(each._id, 'backlog')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>BACKLOG</button>
                             <button className='todo-btn-done' onClick={() => handleSection(each._id, 'todo')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>TO-DO</button>

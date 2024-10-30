@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 const url = 'https://pro-manage-webapp-backend.vercel.app/api'
-const clientUrl = 'https://pro-manage-cuvette-webapp.vercel.app'
+const clientUrl = 'http://localhost:5173'
 
 function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, ellipse, setEllipse, setIsEdit, isLogout, isAdd}) {
 
@@ -212,7 +212,7 @@ function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, elli
                     })}
                     </div>
                     <div className='body-d2-todo'>
-                        {each.dueDate ? <button className='date-btn-todo' style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}th</button> : <div className='date-btn-todo'></div>}
+                        {each.dueDate ? <button className='date-btn-todo' style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}</button> : <div className='date-btn-todo'></div>}
                         <div className='sect-div-todo'>
                             <button className='back-btn-todo' onClick={() => handleSection(each._id, 'backlog')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>BACKLOG</button>
                             <button className='pro-btn-todo' onClick={() => handleSection(each._id, 'inprogress')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>PROGRESS</button>
