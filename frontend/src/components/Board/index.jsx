@@ -96,6 +96,9 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
     if(isAdd){
       setIsAdd(false)
     }
+    if(isDate){
+      setIsDate(false)
+    }
   }
 
   const closeFlag1 = () => {
@@ -113,6 +116,9 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
     }
     if(isLogout){
       setIsLogout(false)
+    }
+    if(isDate){
+      setIsDate(false)
     }
   }
 
@@ -176,11 +182,11 @@ function Board({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdit,
   return (
     <div className='board-container' style={{backgroundColor: isDelete || isCreate || isEdit || isLogout || isAdd ? '#303D438C' : '#FFFFFF'}}>
       <ToastContainer />
-      <div className='div1-container-board' onClick={closeFlag}>
+      <div className='div1-container-board' onClick={closeFlag} style={{opacity: isDelete || isCreate || isEdit || isLogout || isAdd ? '0.1' : '1'}}>
         <h3 className='head1-board'>Welcome! {Username}</h3>
         <h3 className='date-board'>{date.getDate()}th {months[date.getMonth()]}, {date.getFullYear()}</h3>
       </div>
-      <div className='head2-div-board' onClick={closeFlag1}>
+      <div className='head2-div-board' onClick={closeFlag1} style={{opacity: isDelete || isCreate || isEdit || isLogout || isAdd ? '0.1' : '1'}}>
         <div className='board-div-board'>
           <h3 className='head2-board'>Board</h3>
           <h3 className='para1-board' onClick={() => setIsAdd(true)}><img src={people} alt='people_img'></img>&nbsp; Add People</h3>

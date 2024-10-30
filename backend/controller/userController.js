@@ -107,7 +107,7 @@ const updateUser = async (req, res, next) => {
             user.name = name
         }
         else if(email && !name && !oldPassword && !newPassword){
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{3,}$/
             if (!emailRegex.test(email)) {
                 return res.status(400).json({msg: 'Invalid Email format!'})
             }

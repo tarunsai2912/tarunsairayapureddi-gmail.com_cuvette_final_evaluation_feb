@@ -38,7 +38,7 @@ function Login({handleRegister}) {
     if (!formData.email) {
       newErrors.email = 'Give an Email'
     } 
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    else if (!/\S+@\S+\.\S{3,}/.test(formData.email)) {
       newErrors.email = 'Invalid Email'
     }
     if (!formData.password) {

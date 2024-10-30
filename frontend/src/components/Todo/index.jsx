@@ -9,6 +9,8 @@ import collapse from '../../assets/collapse.png'
 import addImg from '../../assets/add.png'
 import red from '../../assets/red.png'
 import green from '../../assets/green.png'
+import moment from 'moment'
+import 'moment-timezone'
 import ellipseImg from '../../assets/3Ellipse.png'
 import blue from '../../assets/blue.png'
 import { ToastContainer, toast } from 'react-toastify'
@@ -212,7 +214,7 @@ function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, elli
                     })}
                     </div>
                     <div className='body-d2-todo'>
-                        {each.dueDate ? <button className='date-btn-todo' style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[new Date(each.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(each.dueDate).toLocaleDateString().split('/')[0]}</button> : <div className='date-btn-todo'></div>}
+                        {each.dueDate ? <button className='date-btn-todo' style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(each.dueDate).tz("Asia/Kolkata").format('DD')}</button> : <div className='date-btn-todo'></div>}
                         <div className='sect-div-todo'>
                             <button className='back-btn-todo' onClick={() => handleSection(each._id, 'backlog')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>BACKLOG</button>
                             <button className='pro-btn-todo' onClick={() => handleSection(each._id, 'inprogress')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>PROGRESS</button>

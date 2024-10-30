@@ -85,17 +85,15 @@ function EditTask({setIsEdit}) {
   }, [])
 
   const handleRemoveChecklist = (index) => {
-    if (task.checklist.length > 1) {
-      const updatedChecklist = task.checklist.filter((each, eachIndex) => {
-        return (
-          eachIndex !== index 
-        )
-      })
-      setTask({
-        ...task,
-        checklist: updatedChecklist
-      })
-    }
+    const updatedChecklist = task.checklist.filter((each, eachIndex) => {
+      return (
+        eachIndex !== index 
+      )
+    })
+    setTask({
+      ...task,
+      checklist: updatedChecklist
+    })
   }
 
   const handleAddChecklist = () => {
@@ -204,7 +202,7 @@ function EditTask({setIsEdit}) {
           return (<div className='check-each-edit' key={eachIndex}>
           {each.checked ? <img className='check-img-edit' src={checkImg} alt='check_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', false)}></img> : <img className='check-img-edit' src={uncheckImg} alt='uncheck_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', true)}></img>}
           <input className='check-inp-edit' value={each.checkText} onChange={(e) => handleChecklistText(eachIndex, 'checkText', e.target.value)}></input>
-          {task.checklist.length > 1 && <img className='del-img-edit' src={deleteImg} alt='delete_img' style={{cursor: 'pointer'}} onClick={handleRemoveChecklist}></img>}
+          <img className='del-img-edit' src={deleteImg} alt='delete_img' style={{cursor: 'pointer'}} onClick={() => handleRemoveChecklist(eachIndex)}></img>
           </div>)
         })}
       </div>

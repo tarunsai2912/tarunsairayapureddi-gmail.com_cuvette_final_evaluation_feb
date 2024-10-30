@@ -4,6 +4,8 @@ import ClipLoader from "react-spinners/ClipLoader"
 import appLogo from '../../assets/appLogo.png'
 import checkImg from '../../assets/check.png'
 import uncheckImg from '../../assets/uncheck.png'
+import moment from 'moment'
+import 'moment-timezone'
 import red from '../../assets/red.png'
 import green from '../../assets/green.png'
 import blue from '../../assets/blue.png'
@@ -65,7 +67,7 @@ function ReadTask() {
         </div>
         {task.dueDate && <div className='date-div-read'>
           <h3 className='date-para-read'>Due Date</h3>
-          <button className='date-no-read'>{months[new Date(task.dueDate).toLocaleDateString().split('/')[1] - 1]} {new Date(task.dueDate).toLocaleDateString().split('/')[0]}</button>
+          <button className='date-no-read'>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(each.dueDate).tz("Asia/Kolkata").format('DD')}</button>
         </div>}
       </div>}
     </div>

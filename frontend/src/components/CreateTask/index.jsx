@@ -78,14 +78,12 @@ function CreateTask({setIsCreate}) {
   }, [])
 
   const handleRemoveChecklist = (index) => {
-    if (checklist.length > 1) {
-      const updatedChecklist = checklist.filter((each, eachIndex) => {
-        return (
-          eachIndex !== index
-        )
-      })
-      setChecklist(updatedChecklist)
-    }
+    const updatedChecklist = checklist.filter((each, eachIndex) => {
+      return (
+        eachIndex !== index
+      )
+    })
+    setChecklist(updatedChecklist)
   }
 
   const handleAddChecklist = () => {
@@ -182,7 +180,7 @@ function CreateTask({setIsCreate}) {
           return (<div className='check-each-create' key={eachIndex}>
           {each.checked ? <img className='check-img-create' src={checkImg} alt='check_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', false)}></img> : <img className='check-img-create' src={uncheckImg} alt='uncheck_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', true)}></img>}
           <input className='check-inp-create' value={each.checkText} onChange={(e) => handleChecklistText(eachIndex, 'checkText', e.target.value)}></input>
-          {checklist.length > 1 && <img className='del-img-create' src={deleteImg} alt='delete_img' style={{cursor: 'pointer'}} onClick={() => handleRemoveChecklist(eachIndex)}></img>}
+          <img className='del-img-create' src={deleteImg} alt='delete_img' style={{cursor: 'pointer'}} onClick={() => handleRemoveChecklist(eachIndex)}></img>
           </div>)
         })}
       </div>

@@ -57,6 +57,13 @@ function Settings() {
               setLoading(false)
               navigate('/')
             }
+            setFormData({
+              name: '',
+              email: '',
+              oldPassword: '',
+              newPassword: ''
+            })
+            setUserName(response.data.userName)
             setLoading(false)
           }
         }
