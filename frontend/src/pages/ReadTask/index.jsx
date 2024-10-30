@@ -67,7 +67,7 @@ function ReadTask() {
         </div>
         {task.dueDate && <div className='date-div-read'>
           <h3 className='date-para-read'>Due Date</h3>
-          <button className='date-no-read'>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(each.dueDate).tz("Asia/Kolkata").format('DD')}</button>
+          <button className='date-no-read'>{months[moment(task.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(task.dueDate).tz("Asia/Kolkata").format('DD')}</button>
         </div>}
       </div>}
     </div>
