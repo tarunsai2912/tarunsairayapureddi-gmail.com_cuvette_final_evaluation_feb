@@ -271,6 +271,7 @@ const getBacklogTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
         const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
@@ -280,7 +281,7 @@ const getBacklogTasks = async (req, res, next) => {
         if (filter === 'Today') {
             dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } } 
         } else if (filter === 'This Week') {
-            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfWeek.toDate() } }
+            dateFilter = { dueDate: { $gte: startOfWeek.toDate(), $lte: endOfWeek.toDate() } }
         } else if (filter === 'This Month') {
             dateFilter = { dueDate: { $gte: startOfMonth.toDate(), $lte: endOfMonth.toDate() } }
         }
@@ -325,6 +326,7 @@ const getToDoTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
         const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
@@ -334,7 +336,7 @@ const getToDoTasks = async (req, res, next) => {
         if (filter === 'Today') {
             dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } }
         } else if (filter === 'This Week') {
-            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfWeek.toDate() } }
+            dateFilter = { dueDate: { $gte: startOfWeek.toDate(), $lte: endOfWeek.toDate() } }
         } else if (filter === 'This Month') {
             dateFilter = { dueDate: { $gte: startOfMonth.toDate(), $lte: endOfMonth.toDate() } }
         }
@@ -381,6 +383,7 @@ const getProgressTasks = async (req, res, next) => {
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
         const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
@@ -389,7 +392,7 @@ const getProgressTasks = async (req, res, next) => {
         if (filter === 'Today') {
             dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } }
         } else if (filter === 'This Week') {
-            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfWeek.toDate() } }
+            dateFilter = { dueDate: { $gte: startOfWeek.toDate(), $lte: endOfWeek.toDate() } }
         } else if (filter === 'This Month') {
             dateFilter = { dueDate: { $gte: startOfMonth.toDate(), $lte: endOfMonth.toDate() } }
         }
@@ -435,6 +438,7 @@ const getDoneTasks = async (req, res, next) => {
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
         const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
@@ -443,7 +447,7 @@ const getDoneTasks = async (req, res, next) => {
         if (filter === 'Today') {
             dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfDay.toDate() } }
         } else if (filter === 'This Week') {
-            dateFilter = { dueDate: { $gte: now.toDate(), $lte: endOfWeek.toDate() } }
+            dateFilter = { dueDate: { $gte: startOfWeek.toDate(), $lte: endOfWeek.toDate() } }
         } else if (filter === 'This Month') {
             dateFilter = { dueDate: { $gte: startOfMonth.toDate(), $lte: endOfMonth.toDate() } }
         }
