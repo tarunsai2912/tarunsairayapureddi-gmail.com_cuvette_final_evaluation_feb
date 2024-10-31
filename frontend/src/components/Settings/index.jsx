@@ -64,6 +64,7 @@ function Settings() {
               newPassword: ''
             })
             setUserName(response.data.userName)
+            setUserEmail(sessionStorage.getItem('email'))
             setLoading(false)
           }
         }
@@ -71,6 +72,11 @@ function Settings() {
           toast.error(error.response.data.msg)
           setLoading(false)
         }
+    }
+
+    const handleInput = () => {
+      setUserName('')
+      setUserEmail('')
     }
 
   return (
@@ -81,20 +87,20 @@ function Settings() {
       {!loading && <div className='set-inp-container'>
         <div className='name-div-set'>
           <img className='name-img-set' src={name} alt='name_img'></img>
-          <input type='text' name='name' placeholder='Name' className='name-input-set' onClick={() => setUserName('')} value={formData.name ? formData.name : userName} onChange={handleChange}></input>
+          <input type='text' name='name' placeholder='Name' className='name-input-set' onClick={handleInput} value={formData.name ? formData.name : userName} onChange={handleChange}></input>
         </div>
         <div className='email-div-set'>
           <img className='email-img-set' src={email} alt='email_img'></img>
-          <input type='email' name='email' placeholder='Update Email' className='email-input-set' onClick={() => setUserEmail('')} value={formData.email ? formData.email : userEmail} onChange={handleChange}></input>
+          <input type='email' name='email' placeholder='Update Email' className='email-input-set' onClick={handleInput} value={formData.email ? formData.email : userEmail} onChange={handleChange}></input>
         </div>
         <div className='oldpass-div-set'>
           <img className='oldpass-img-set' src={password} alt='oldpass_img'></img>
-          <input type={showPassword2 ? "text" : "password"} name='oldPassword' placeholder='Old Password' className='oldpass-input-set' value={formData.oldPassword} onChange={handleChange}></input>
+          <input onClick={handleInput} type={showPassword2 ? "text" : "password"} name='oldPassword' placeholder='Old Password' className='oldpass-input-set' value={formData.oldPassword} onChange={handleChange}></input>
           {showPassword2 ? <img className='view1-img-set' src={hide} alt='hide_img' onClick={handleClick2}></img> : <img className='view1-img-set' src={view} alt='view_img' onClick={handleClick2}></img>}
         </div> 
         <div className='newpass-div-set'>
           <img className='newpass-img-set' src={password} alt='newpass_img'></img>
-          <input type={showPassword1 ? "text" : "password"} name='newPassword' placeholder='New Password' className='newpass-input-set' value={formData.newPassword} onChange={handleChange}></input>
+          <input onClick={handleInput} type={showPassword1 ? "text" : "password"} name='newPassword' placeholder='New Password' className='newpass-input-set' value={formData.newPassword} onChange={handleChange}></input>
           {showPassword1 ? <img className='view2-img-set' src={hide} alt='hide_img' onClick={handleClick1}></img> : <img className='view2-img-set' src={view} alt='view_img' onClick={handleClick1}></img>}
         </div>
         <button onClick={handleSubmit} className='update-btn-set'>Update</button></div>}

@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     background-color: #F9FCFF;
+    border-radius: 12px;
 }
 .backlog-div-analy{
     display: flex;
@@ -118,6 +119,7 @@
     display: flex;
     flex-direction: column;
     background-color: #F9FCFF;
+    border-radius: 12px;
 }
 .low-div-analy{
     display: flex;
