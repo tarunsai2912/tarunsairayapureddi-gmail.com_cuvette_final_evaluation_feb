@@ -63,6 +63,10 @@
     align-items: center;
     gap: 0.5vw;
 }
+.pri-para-back{
+    display: flex;
+    align-items: center;
+}
 .email-div-back{
     width: 17px;
     height: 17px;

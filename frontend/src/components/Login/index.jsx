@@ -33,27 +33,21 @@ function Login({handleRegister}) {
   }
 
   const validate = () => {
-    const newErrors = {};
+    const newErrors = {}
 
     if (!formData.email) {
       newErrors.email = 'Give an Email'
     } 
-    else if (!/\S+@\S+\.\S{3,}/.test(formData.email)) {
-      newErrors.email = 'Invalid Email'
-    }
     if (!formData.password) {
       newErrors.password = 'Give a Password'
     } 
-    else if (formData.password.length < 6) {
-      newErrors.password = 'Password is Incorrect'
-    }
-    return newErrors;
+    return newErrors
   }
 
   const handleSubmit = async () => {
     const formErrors = validate()
     if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
+      setErrors(formErrors)
       if(errors.email){
         setFormData({...formData,
           email: ''

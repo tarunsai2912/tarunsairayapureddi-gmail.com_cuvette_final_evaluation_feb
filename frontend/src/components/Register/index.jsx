@@ -67,9 +67,9 @@ function Register({handleLogin}) {
     };
 
     const handleSubmit = async () => {
-        const formErrors = validate();
+        const formErrors = validate()
         if (Object.keys(formErrors).length > 0) {
-            setErrors(formErrors);
+            setErrors(formErrors)
             if(errors.name){
                 setFormData({...formData,
                     name: ''

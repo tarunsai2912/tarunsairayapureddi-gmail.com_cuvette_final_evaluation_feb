@@ -72,6 +72,10 @@
     align-items: center;
     gap: 0.5vw;
 }
+.pri-para-todo{
+    display: flex;
+    align-items: center;
+}
 .email-div-todo{
     width: 17px;
     height: 17px;
