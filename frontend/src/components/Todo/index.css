@@ -217,13 +217,16 @@
     align-items: center;
 }
 .date-btn-todo{
-    width: 8vh;
+    width: 4vw;
     height: 4vh;
     border-radius: 8px;
     border: none;
     font-family: Poppins;
     font-size: 0.8vw;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 .sect-div-todo{
@@ -232,39 +235,48 @@
     gap: 0.3vw;
 }
 .back-btn-todo{
-    width: 10vh;
+    width: 5vw;
     height: 4vh;
     border-radius: 8px;
     border: none;
     font-family: Poppins;
     font-size: 0.8vw;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #EEECEC;
     color: #767575;
     cursor: pointer;
 }
 .pro-btn-todo{
-    width: 11vh;
+    width: 5.5vw;
     height: 4vh;
     border-radius: 8px;
     border: none;
     font-family: Poppins;
     font-size: 0.8vw;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #EEECEC;
     color: #767575;
     cursor: pointer;
 }
 .done-btn-todo{
-    width: 7vh;
+    width: 3.5vw;
     height: 4vh;
     border-radius: 8px;
     border: none;
     font-family: Poppins;
     font-size: 0.8vw;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #EEECEC;
     color: #767575;
