@@ -68,11 +68,11 @@ function SideBar({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdi
 
   return (
     <div className='sidebar-container' style={{backgroundColor: isDelete || isCreate || isEdit || isLogout || isAdd ? '#303D438C' : '#FFFFFF'}} onClick={closeFlag}>
-      <div className='head-div-sidebar'>
+      <div className='head-div-sidebar' style={{opacity: isDelete || isCreate || isEdit || isLogout || isAdd ? '0.1' : '1'}}>
         <img className='img-sidebar' src={appLogo} alt='app_img'></img>
         <h1 className='head-sidebar' onClick={handleDashClick}>Pro Manage</h1>
       </div>
-      <div className='mid-div-sidebar'>
+      <div className='mid-div-sidebar' style={{opacity: isDelete || isCreate || isEdit || isLogout || isAdd ? '0.1' : '1'}}>
         <div className='board-sidebar' onClick={handleDashClick} style={{backgroundColor: isClickedDash ? '#4391ED1A' : ''}}>
           {isClickedDash ? <img className='board-img-sidebar' src={board1} alt='board_img'></img> : <img className='board-img-sidebar' src={board} alt='board_img'></img>}
           <p className='board-para-sidebar' style={{color: isClickedDash ? '#000000' : '#707070'}}>Board</p>
@@ -86,7 +86,7 @@ function SideBar({isDelete, setIsDelete, isCreate, setIsCreate, isEdit, setIsEdi
           <p className='set-para-sidebar' style={{color: isClickedSet ? '#000000' : '#707070'}}>Settings</p>
         </div>
       </div>
-      <div className='logout-div-sidebar' onClick={() => setIsLogout(true)}>
+      <div className='logout-div-sidebar' onClick={() => setIsLogout(true)} style={{opacity: isDelete || isCreate || isEdit || isLogout || isAdd ? '0.1' : '1'}}>
         <img className='logout-img-sidebar' src={logout} alt='logout_img'></img>
         <p className='logout-para-sidebar'>Log out</p>
       </div>

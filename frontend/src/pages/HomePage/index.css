@@ -8,7 +8,6 @@
 .grid1-home{
     grid-column: 1/2;
     background-color: #FFFFFF;
-    border-right: 1px solid #EDF5FE;
 }
 .grid2-home{
     grid-column: 2/3;

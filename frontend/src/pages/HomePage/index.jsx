@@ -56,7 +56,7 @@ function HomePage() {
     <>
       {isToken && 
       <div className='home-container'>
-        <div className='grid1-home'>
+        <div className='grid1-home' style={{borderRight: isDelete || isCreate || isEdit || isLogout || isAdd ? '' : '1px solid #EDF5FE'}}>
           <SideBar isDelete={isDelete} setIsDelete={setIsDelete} isCreate={isCreate} setIsCreate={setIsCreate} isEdit={isEdit} setIsEdit={setIsEdit} isLogout={isLogout} setIsLogout={setIsLogout} isAdd={isAdd} setIsAdd={setIsAdd} handleDashboard={handleDashboard} handleAnalytics={handleAnalytics} handleSettings={handleSettings} />
         </div>
         <div className='grid2-home'>
