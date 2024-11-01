@@ -271,8 +271,8 @@ const getBacklogTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
-        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
-        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").day(1).startOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").day(7).endOf('day')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
@@ -326,8 +326,8 @@ const getToDoTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
-        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
-        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").day(1).startOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").day(7).endOf('day')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
@@ -382,8 +382,8 @@ const getProgressTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
-        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
-        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").day(1).startOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").day(7).endOf('day')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
@@ -437,8 +437,8 @@ const getDoneTasks = async (req, res, next) => {
 
         const now = moment().tz("Asia/Kolkata").startOf('day')
         const endOfDay = moment(now).tz("Asia/Kolkata").endOf('day')
-        const endOfWeek = moment(now).tz("Asia/Kolkata").endOf('week')
-        const startOfWeek = moment(now).tz("Asia/Kolkata").startOf('week')
+        const startOfWeek = moment(now).tz("Asia/Kolkata").day(1).startOf('day')
+        const endOfWeek = moment(now).tz("Asia/Kolkata").day(7).endOf('day')
         const endOfMonth = moment(now).tz("Asia/Kolkata").endOf('month')
         const startOfMonth = moment(now).tz("Asia/Kolkata").startOf('month')
 
