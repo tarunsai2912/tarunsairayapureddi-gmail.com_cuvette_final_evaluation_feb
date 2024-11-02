@@ -34,12 +34,12 @@ const userLogin = async (req, res, next) => {
         
         const user = await User.findOne({email})
         if(!user){
-            return res.status(400).json({msg: 'Email/Password is Incorrect'})
+            return res.status(400).json({msg: 'User doesnot exists'})
         }
         
         const passMatch = await bcrypt.compare(password, user.password)
         if(!passMatch){
-            return res.status(400).json({msg: 'Email/Password is Incorrect'})
+            return res.status(400).json({msg: 'Password is Incorrect'})
         }
 
         const user_Id = user._id
