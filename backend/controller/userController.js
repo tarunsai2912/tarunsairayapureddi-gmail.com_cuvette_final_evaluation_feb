@@ -105,6 +105,51 @@ const updateUser = async (req, res, next) => {
             }
             user.name = name
         }
+        else if(email && name && !oldPassword && !newPassword){
+            if(user.name === name && user.email !== email){
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{3,}$/
+                if (!emailRegex.test(email)) {
+                    return res.status(400).json({msg: 'Invalid Email format!'})
+                }
+                const existUser = await User.findOne({email})
+                if(existUser){
+                    return res.status(400).json({msg: 'Email already taken!'})
+                }
+                const assignTasks = await Task.find({assignedToEmail: user.email})
+                const boardTasks = await Task.find({boardToEmail: user.email})
+                const boardUsers = await User.find({boardToUser: user.email})
+
+                if(assignTasks){
+                    await Promise.all(assignTasks.map(async (each) => {
+                        each.assignedToEmail = email
+                        await each.save()
+                    }))
+                }
+
+                if(boardTasks){
+                    await Promise.all(boardTasks.map(async (each) => {
+                        each.boardToEmail.pull(user.email)
+                        each.boardToEmail.push(email)
+                        await each.save()
+                    }))
+                }
+
+                if(boardUsers){
+                    await Promise.all(boardUsers.map(async (each) => {
+                        each.boardToUser.pull(user.email)
+                        each.boardToUser.push(email)
+                        await each.save()
+                    }))
+                }
+                user.email = email
+            }
+            else if(user.name !== name && user.email === email){
+                user.name = name 
+            }
+            else{
+                return res.status(400).json({msg: 'Only one field can be updated at a time!'})
+            }
+        }
         else if(email && !name && !oldPassword && !newPassword){
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{3,}$/
             if (!emailRegex.test(email)) {
