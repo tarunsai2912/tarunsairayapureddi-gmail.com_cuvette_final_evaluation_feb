@@ -209,7 +209,7 @@ function Backlog({isDelete, setIsDelete, isCreate, isEdit, setId, ellipse, setEl
                     })}
                     </div>
                     <div className='body-d2-back'>
-                        {each.dueDate ? <button className='date-btn-back' style={{backgroundColor: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(backlogData[0].dueDate).tz("Asia/Kolkata").format('DD')}</button> : <div className='date-btn-back'></div>}
+                        {each.dueDate ? <button className='date-btn-back' style={{backgroundColor: each.priority === 'high' || new Date(each.dueDate).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) ? '#FFFFFF' : '#767575'}}>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(backlogData[0].dueDate).tz("Asia/Kolkata").format('DD')}</button> : <div className='date-btn-back'></div>}
                         <div className='sect-div-back'>
                             <button className='pro-btn-back' onClick={() => handleSection(each._id, 'inprogress')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>PROGRESS</button>
                             <button className='todo-btn-back' onClick={() => handleSection(each._id, 'todo')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>TO-DO</button>

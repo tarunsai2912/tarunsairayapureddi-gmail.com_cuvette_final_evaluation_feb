@@ -214,7 +214,13 @@ function Todo({isDelete, setIsDelete, isCreate, isEdit, setIsCreate, setId, elli
                     })}
                     </div>
                     <div className='body-d2-todo'>
-                        {each.dueDate ? <button className='date-btn-todo' style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).toLocaleDateString() < new Date().toLocaleDateString() ? '#FFFFFF' : '#767575'}}>{months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(each.dueDate).tz("Asia/Kolkata").format('DD')}</button> : <div className='date-btn-todo'></div>}
+                        {each.dueDate ? 
+                          <button className='date-btn-todo' 
+                            style={{backgroundColor: each.priority === 'high'  || new Date(each.dueDate).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) ? '#CF3636' : '#EEECEC', color: each.priority === 'high' || new Date(each.dueDate).setHours(0, 0, 0, 0) < new Date().setHours(0, 0, 0, 0) ? '#FFFFFF' : '#767575'}}>
+                            {months[moment(each.dueDate).tz("Asia/Kolkata").format('MM') - 1]} {moment(each.dueDate).tz("Asia/Kolkata").format('DD')}
+                          </button> : 
+                          <div className='date-btn-todo'></div>
+                        }
                         <div className='sect-div-todo'>
                             <button className='back-btn-todo' onClick={() => handleSection(each._id, 'backlog')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>BACKLOG</button>
                             <button className='pro-btn-todo' onClick={() => handleSection(each._id, 'inprogress')} disabled={isDelete || isCreate || isLogout || isAdd || isEdit}>PROGRESS</button>
