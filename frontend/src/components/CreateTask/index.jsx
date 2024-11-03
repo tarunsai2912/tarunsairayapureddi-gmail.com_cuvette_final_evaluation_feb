@@ -178,7 +178,7 @@ function CreateTask({setIsCreate}) {
         {checklist.length > 0 && checklist.map((each, eachIndex) => {
           return (<div className='check-each-create' key={eachIndex}>
           {each.checked ? <img className='check-img-create' src={checkImg} alt='check_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', false)}></img> : <img className='check-img-create' src={uncheckImg} alt='uncheck_img' style={{cursor: 'pointer'}} onClick={() => handleChecklistCheck(eachIndex, 'checked', true)}></img>}
-          <input className='check-inp-create' value={each.checkText} onChange={(e) => handleChecklistText(eachIndex, 'checkText', e.target.value)}></input>
+          <input className='check-inp-create' value={each.checkText} onChange={(e) => handleChecklistText(eachIndex, 'checkText', e.target.value)} placeholder='Add a Task'></input>
           <img className='del-img-create' src={deleteImg} alt='delete_img' style={{cursor: 'pointer'}} onClick={() => handleRemoveChecklist(eachIndex)}></img>
           </div>)
         })}
