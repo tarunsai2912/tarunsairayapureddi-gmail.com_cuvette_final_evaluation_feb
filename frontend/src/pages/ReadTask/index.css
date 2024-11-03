@@ -43,7 +43,7 @@
 .pri-para-read{
     width: 95%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-family: Poppins;
     font-size: 0.6vw;
@@ -212,7 +212,7 @@
     .pri-para-read{
         width: 90%;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         font-family: Poppins;
         font-size: 2.5vw;
